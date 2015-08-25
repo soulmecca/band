@@ -5,3 +5,7 @@
 <%= form_for @group, url:{action: 'destroy'}, method: :delete do |f|%>
 <%= f.button 'Delete'%>
 <%end%>
+<%@group.events.each do |event| %>
+	<%= event.date%></br>
+	<%= event.venue.name%>
+<%end%>
