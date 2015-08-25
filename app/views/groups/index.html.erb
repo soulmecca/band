@@ -1,0 +1,5 @@
+<% @groups.each do |group|%>
+<h1>Band Name:<%= link_to group.name, group%></h1>
+<%end%>
+<button><%=link_to 'Add group', new_group_path%></button>
+
