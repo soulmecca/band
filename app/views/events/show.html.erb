@@ -1,5 +1,14 @@
+
+
+<h2><%= link_to @event.venue.name, venue_path(@event.venue.id)%></h2>
+
+<h2><%= link_to @event.group.name, group_path(@event.group.id)%></h2>
+
+
 <h2><%= @event.date %></h2>
 <h3><%= @event.alcohol_served %></h3>
+
+
 </br>
 
 
@@ -10,3 +19,4 @@
 
 <%= link_to 'Edit This Event', edit_event_path %>
 <%= link_to 'Delete This Event', event_path, method: :delete %>
+
