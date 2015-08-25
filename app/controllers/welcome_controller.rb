@@ -9,8 +9,6 @@ class WelcomeController < ApplicationController
 
 		@dates = Event.find_by(date: date)
 		
-
-
 	end
 
 
