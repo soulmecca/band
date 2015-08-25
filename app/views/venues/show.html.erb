@@ -1,0 +1,21 @@
+<h1><%= @venue.name %></h1>
+<h3><%= @venue.city %>, <%= @venue.state %></h3>
+<% if @venue.family_friendly %>
+	<p>It's Family Friendly!</p>
+<% else %>
+	<p>Caution: NOT Family Friendly!</p>
+<% end %>
+
+<%= link_to "Edit", edit_venue_path %> <br><br>
+<%= link_to "Delete Venue", venue_path, method: :delete %>
+<h2>Events:</h2>
+
+<% @venue.events.each do |event| %>
+<h3>Date: <%= @venue.events.first.date %></h3>
+<h4>Performed by: <%= event.group.name %></h4>
+<% if event.alcohol_served %>
+<p>Alcohol Available</p>
+<% else %>
+<p>Alcohol Not Available</p>
+<% end %>
+<% end %>
