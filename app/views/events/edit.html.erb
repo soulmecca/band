@@ -1,0 +1,9 @@
+<%= form_for @event do |f| %>
+    <%= f.text_field :date, placeholder: 'Date?' %><br>
+    <%= f.text_field :alcohol_served, placeholder: 'Alcohol served?' %><br>
+    <%= f.text_field :venue_id, placeholder: 'Venue id?' %><br>
+    <%= f.text_field :group_id, placeholder: 'Group id?' %><br>
+
+    <%= f.submit %>
+<% end %>
+

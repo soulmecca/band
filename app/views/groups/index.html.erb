@@ -1,5 +1,15 @@
-<% @groups.each do |group|%>
-<h1>Band Name:<%= link_to group.name, group%></h1>
-<%end%>
-<button><%=link_to 'Add group', new_group_path%></button>
 
+
+<div id ="frame">
+
+	<div id="contents">
+		<div id="header">
+			<h1>BAND </h1>
+		</div>
+	<% @groups.each do |group|%>
+	<h2>Band Name:<%= link_to group.name, group%></h2>
+	<%end%>
+
+	<button type="button" class="btn btn-default"><%=link_to 'Add group', new_group_path%></button>
+	</div>
+</div>
