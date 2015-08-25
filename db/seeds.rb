@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Group.create({name: "Soulmecca", genre: "soul", explicit_lyric: false})
+Group.create({name: "Soulmecca", genre: "soul", explicit_lyric	: false})
 
 Venue.create({name: "General Assembly", city: "New York", state: "NY", family_friendly: true})
 
