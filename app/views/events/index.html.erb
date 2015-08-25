@@ -1,0 +1,10 @@
+<% @events.each do |event| %>
+<h2>Event Date:<%= link_to event.date, event %></h2>
+<h3>Alcohol Served: <%= event.alcohol_served %></h3>
+
+
+
+<% end %>
+
+<%= link_to 'new date', new_event_path %>
+
