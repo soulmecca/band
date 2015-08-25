@@ -1,4 +1,10 @@
 <% @events.each do |event| %>
+
+<h2><%= link_to event.venue.name, venue_path(event.venue.id)%></h2>
+
+<h2><%= link_to event.group.name, group_path(event.group.id)%></h2>
+
+
 <h2>Event Date:<%= link_to event.date, event %></h2>
 <h3>Alcohol Served: <%= event.alcohol_served %></h3>
 
@@ -8,3 +14,12 @@
 
 <%= link_to 'new date', new_event_path %>
 
+
+
+
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:date, "Search for:") %>
+  <%= date_field_tag(:date) %>
+  <%= submit_tag("Search") %>
+<% end %>

@@ -4,6 +4,10 @@
     <%= f.text_field :venue_id, placeholder: 'Venue id?' %><br>
     <%= f.text_field :group_id, placeholder: 'Group id?' %><br>
 
+<%= f.collection_select :venue_id, Venue.all, :id, :name %>
+
+<%= f.collection_select :group_id, Group.all, :id, :name %>
+
     <%= f.submit %>
 <% end %>
 
