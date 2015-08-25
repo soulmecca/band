@@ -1,8 +1,17 @@
-<h1>All Event Locations for: <%= @events[0].date %></h1>
+<% if @events.length > 0 %>
 
-<% @events.each do |event| %>
-<hr>
+
+	<h1>All Event Locations for: <%= @events[0].date %></h1>
 	
-	<h2>Location: <%=event.venue.name%></h2>
-	<h3>Played by: <%=event.group.name%></h3>
+	<% @events.each do |event| %>
+	<hr>
+		
+		<h2>Location: <%=event.venue.name%></h2>
+		<h3>Played by: <%=event.group.name%></h3>
+	<% end %>
+
+<% else %>
+	
+	<h1>THERE ARE NO MATCHED DATES</h1>
+
 <% end %>
