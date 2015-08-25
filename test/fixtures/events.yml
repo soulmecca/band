@@ -3,7 +3,11 @@
 one:
   date: MyString
   alcohol_served: false
+  group_id: 1
+  venue_id: 1
 
 two:
   date: MyString
   alcohol_served: false
+  group_id: 1
+  venue_id: 1

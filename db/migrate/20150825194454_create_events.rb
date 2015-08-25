@@ -3,6 +3,8 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :date
       t.boolean :alcohol_served
+      t.integer :group_id
+      t.integer :venue_id
 
       t.timestamps null: false
     end
