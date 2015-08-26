@@ -1,12 +1,12 @@
-<%= link_to "Add New Venue", new_venue_path %>
 
 <% @venues.each do |venue| %>
 	<h1><%= link_to venue.name, venue_path(venue.id)%></h1>
 	<h3><%=venue.city%>, <%=venue.state%></h3>
 <% if venue.family_friendly %>
-	<p>Family Friendly? Yes</p>
+	<p style='color:blue'>Family Friendly</p>
 	<% else %>
-	<p>Family Friendly? Naw</p>
+	<p style='color:red'>Not Family Friendly</p>
 	<% end %>
 
+<hr>
 <% end %>
