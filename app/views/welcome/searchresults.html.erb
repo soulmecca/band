@@ -2,7 +2,7 @@
 
 
 	<h1>All Event Locations for: <%= @events[0].date %></h1>
-	
+
 	<% @events.each do |event| %>
 	<hr>
 		
@@ -13,5 +13,6 @@
 <% else %>
 	
 	<h1>THERE ARE NO MATCHED DATES</h1>
+	<%= link_to "Search", search_path %>
 
 <% end %>
