@@ -9,8 +9,14 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		Event.create(event_params)
-		redirect_to events_path
+		date=params["date"]
+		if Event.exists?(:date => date)
+			"date already scheduled"
+			# redirect_to new_event_path
+		else
+			Event.create(event_params)
+			redirect_to events_path
+		end
 	end
 
 	def show
