@@ -1,15 +1,115 @@
+	<style>
+	body{
+		background: url("https://cmgajcmusic.files.wordpress.com/2015/03/rolling-stones.jpg") no-repeat center center fixed;
+	 /* -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;*/
+	
+	}
+	#frame{
+		margin: auto;
+		width: 500px;
+		/*border: 1px solid white;*/
+		margin-top: 100px;
+		list-style-position: inside;
+	}
+	.main{
+		width: 150px;
+		height: 150px;
+		font-size: 1000px;
+
+
+		}
+.btn-custom {
+  background-color: hsl(215, 4%, 56%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#8a8e93");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ffffff), to(#8a8e93));
+  background-image: -moz-linear-gradient(top, #ffffff, #8a8e93);
+  background-image: -ms-linear-gradient(top, #ffffff, #8a8e93);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #8a8e93));
+  background-image: -webkit-linear-gradient(top, #ffffff, #8a8e93);
+  background-image: -o-linear-gradient(top, #ffffff, #8a8e93);
+  background-image: linear-gradient(#ffffff, #8a8e93);
+  border-color: #8a8e93 #8a8e93 hsl(215, 4%, 45%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.72);
+  -webkit-font-smoothing: antialiased;
+}
+span{
+	font-size: 28px;
+}
+#contents{
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: .5px;
+}
+.box{
+	text-align: center;
+}
+#empty{
+	height: 100px;
+}
+#inner{
+
+	width:95%;
+	
+	background-color: rgba(192, 192, 192, 0.8);
+	margin: 6px auto;
+  padding-top: 1px;
+
+}
+img{
+	width: 150px;
+	height: 150px;
+}
+.row{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+.text{
+	padding-top: 25px;
+}
+</style>
+
+
+	
+
+
 
 
 <div id ="frame">
-
 	<div id="contents">
-		<div id="header">
-			<h1>BAND </h1>
-		</div>
-	<% @groups.each do |group|%>
-	<h2>Band Name:<%= link_to group.name, group%></h2>
-	<%end%>
-
-	<button type="button" class="btn btn-default"><%=link_to 'Add group', new_group_path%></button>
+				<span>BAND</span>
 	</div>
+	<div id="contents">
+		<ul>
+			<% @groups.each do |group|%>
+				<h2>Band Name:<%= link_to group.name, group%></h2>
+			<%end%>
+		</ul>
+	</div>
+	<button type="button" class="btn btn-default" id="inner"><%=link_to 'Add group', new_group_path%></button>
 </div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
