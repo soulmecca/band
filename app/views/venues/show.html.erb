@@ -1,3 +1,4 @@
+<div class="path-header">
 <h1><%= link_to @venue.name, edit_venue_path %></h1>
 <h3><%= @venue.city %>, <%= @venue.state %></h3>
 
@@ -8,10 +9,18 @@
 <% end %>
 
 <br><br>
+</div>
+
+<div class="delete-button">
+<%= link_to "Delete Venue", venue_path, method: :delete %>
+</div>
 
 <hr>
+<div class="new-button">
 <%= link_to "Create New Event", venue_path+'/newevent' %> <br>
+</div>
 
+<div class="body-section">
 <% if @venue.events.length > 0 %>
 	<h2>Events:</h2>
 
@@ -34,5 +43,5 @@
 	<h2>There are no Scheduled Events</h2>
 <% end %>
 
+</div>
 <br><br><br>
-<%= link_to "Delete Venue", venue_path, method: :delete %>

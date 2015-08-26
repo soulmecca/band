@@ -1,4 +1,4 @@
-
+<div class="body-section">
 <% @venues.each do |venue| %>
 	<h1><%= link_to venue.name, venue_path(venue.id)%></h1>
 	<h3><%=venue.city%>, <%=venue.state%></h3>
@@ -10,3 +10,4 @@
 
 <hr>
 <% end %>
+</div>
