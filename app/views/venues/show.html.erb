@@ -1,24 +1,35 @@
-<h1><%= @venue.name %></h1>
+<h1><%= link_to @venue.name, edit_venue_path %></h1>
 <h3><%= @venue.city %>, <%= @venue.state %></h3>
+
 <% if @venue.family_friendly %>
-	<p>It's Family Friendly!</p>
+	<p style='color:blue'>It's Family Friendly!</p>
 <% else %>
-	<p>Caution: NOT Family Friendly!</p>
+	<p style='color:red'>Caution: NOT Family Friendly!</p>
 <% end %>
 
-<%= link_to "Edit", edit_venue_path %> <br><br>
-<%= link_to "Create New Event", new_event_path %> <br>
-<h2>Events:</h2>
+<br><br>
 
-<% @venue.events.each do |event| %>
-<h3><%= link_to event.date, event_path(event.id) %></h3>
+<hr>
+<%= link_to "Create New Event", venue_path+'/newevent' %> <br>
 
-<h4>Performed by: <%= link_to event.group.name, group_path(event.group.id) %></h4>
-<% if event.alcohol_served %>
-<p>Alcohol Available</p>
+<% if @venue.events.length > 0 %>
+	<h2>Events:</h2>
+
+	<% @venue.events.each do |event| %>
+
+		<h3>Date: <%= link_to event.date, event_path(event.id) %></h3>
+
+		<h4>Performed by: <%= link_to event.group.name, group_path(event.group.id) %></h4>
+		<% if event.alcohol_served %>
+			<p>Alcohol Available</p>
+		<% else %>
+			<p>Alcohol Not Available</p>
+		<% end %>
+		<hr>
+	<% end %>
 <% else %>
-<p>Alcohol Not Available</p>
+	<h2>There are no Scheduled Events</h2>
 <% end %>
-<% end %>
+
 <br><br><br>
 <%= link_to "Delete Venue", venue_path, method: :delete %>

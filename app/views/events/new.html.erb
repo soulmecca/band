@@ -1,14 +1,14 @@
+<h1>Create New Event</h1>
 <%= form_for @event do |f| %>
 
-<%= f.date_field(:date) %> </br>
-    <%= f.text_field :alcohol_served, placeholder: 'Alcohol Served?' %><br>
-
-
-<span><%= f.collection_select :venue_id, Venue.all, :id, :name %></span></br>
-
-<%= f.collection_select :group_id, Group.all, :id, :name %></br>
-
-    <%= f.submit %>
+<%= f.date_field(:date) %>
+<br>
+<%= f.collection_select :venue_id, Venue.all, :id, :name %>
+<br>
+<%= f.collection_select :group_id, Group.all, :id, :name %>
+<br>
+<%= f.label :alcohol_served, "Alcohol Served?" %>
+<%= f.check_box :alcohol_served %>
+<br>
+<%= f.submit %>
 <% end %>
-
-

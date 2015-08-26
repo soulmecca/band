@@ -14,7 +14,8 @@ class EventsController < ApplicationController
 		if !Event.exists?(:date => date, :venue_id => venue_id)	
 		Event.create(event_params)
 		end
-		redirect_to events_path
+		# redirect_to events_path
+		render inline: "<h1>Event already exists for #{date}</h1>", layout: 'application'
 	end
 
 	def show

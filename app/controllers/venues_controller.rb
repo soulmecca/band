@@ -30,6 +30,15 @@ class VenuesController < ApplicationController
 		redirect_to venues_path
 	end
 
+	def newevent
+		@event = Event.new
+		if Venue.find(params['id']).family_friendly
+			@groups = Group.where(explicit_lyric: false)
+		else 
+			@groups = Group.all
+		end
+	end
+
 	private
 
 		def venue_params

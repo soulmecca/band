@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/search' => 'welcome#search'
   get '/searchresults' => 'welcome#searchresults'
+  get "/venues/:id/newevent" => 'venues#newevent'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
