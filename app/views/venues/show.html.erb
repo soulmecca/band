@@ -1,17 +1,26 @@
+<div class="path-header">
 <h1><%= link_to @venue.name, edit_venue_path %></h1>
 <h3><%= @venue.city %>, <%= @venue.state %></h3>
 
 <% if @venue.family_friendly %>
 	<p style='color:blue'>It's Family Friendly!</p>
 <% else %>
-	<p style='color:red'>Caution: NOT Family Friendly!</p>
+	<p style='color:red'>Warning: 18+!</p>
 <% end %>
 
 <br><br>
+</div>
+
+<div class="delete-button">
+<%= link_to "Delete Venue", venue_path, method: :delete %>
+</div>
 
 <hr>
+<div class="new-button">
 <%= link_to "Create New Event", venue_path+'/newevent' %> <br>
+</div>
 
+<div class="body-section">
 <% if @venue.events.length > 0 %>
 	<h2>Events:</h2>
 
@@ -19,11 +28,14 @@
 
 		<h3>Date: <%= link_to event.date, event_path(event.id) %></h3>
 
-		<h4>Performed by: <%= link_to event.group.name, group_path(event.group.id) %></h4>
+		<h4>Performed by: <%= link_to event.group.name, group_path(event.group.id) %>
+		<% if event.group.explicit_lyric %> <span>(explicit)</span> <%end%>
+		</h4>
+
 		<% if event.alcohol_served %>
-			<p>Alcohol Available</p>
+			<p style='color:blue'>Get Drunk!</p>
 		<% else %>
-			<p>Alcohol Not Available</p>
+			<p style='color:red'>BYOB</p>
 		<% end %>
 		<hr>
 	<% end %>
@@ -31,5 +43,5 @@
 	<h2>There are no Scheduled Events</h2>
 <% end %>
 
+</div>
 <br><br><br>
-<%= link_to "Delete Venue", venue_path, method: :delete %>

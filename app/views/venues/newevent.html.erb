@@ -1,5 +1,8 @@
+<div class="path-header">
 <h1>New Event for <%= Venue.find(params['id']).name %></h1>
+</div>
 
+<div class="body-section">
 <%= form_for @event do |f| %>
 <!-- how the hell does this work? -->
 <%= f.label :date, "Set Date:" %>
@@ -15,3 +18,4 @@
 
 <%= f.hidden_field :venue_id, value: params['id'] %>
 <% end %>
+</div>
