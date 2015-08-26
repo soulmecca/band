@@ -18,28 +18,28 @@ ActiveRecord::Schema.define(version: 20150825194627) do
 
   create_table "events", force: :cascade do |t|
     t.string   "date"
-    t.boolean  "alcohol_served"
+    t.boolean  "alcohol_served", default: true
     t.integer  "group_id"
     t.integer  "venue_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.string   "genre"
-    t.boolean  "explicit_lyric"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.boolean  "explicit_lyric", default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "venues", force: :cascade do |t|
     t.string   "name"
     t.string   "city"
     t.string   "state"
-    t.boolean  "family_friendly"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "family_friendly", default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
