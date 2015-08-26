@@ -9,7 +9,11 @@ class EventsController < ApplicationController
 
 	def create
 
+		date=params["event"]["date"]
+		venue_id = params["event"]["venue_id"]
+		if !Event.exists?(:date => date, :venue_id => venue_id)	
 		Event.create(event_params)
+		end
 		redirect_to events_path
 	end
 
