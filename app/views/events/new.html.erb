@@ -1,13 +1,14 @@
 <%= form_for @event do |f| %>
 
-<%= f.date_field(:date) %>
+<%= f.date_field(:date) %> </br>
     <%= f.text_field :alcohol_served, placeholder: 'Alcohol Served?' %><br>
 
-<%= f.collection_select :venue_id, Venue.all, :id, :name %>
 
-<%= f.collection_select :group_id, Group.all, :id, :name %>
+<span><%= f.collection_select :venue_id, Venue.all, :id, :name %></span></br>
 
-
+<%= f.collection_select :group_id, Group.all, :id, :name %></br>
 
     <%= f.submit %>
 <% end %>
+
+

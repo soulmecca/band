@@ -4,7 +4,7 @@ class CreateVenues < ActiveRecord::Migration
       t.string :name
       t.string :city
       t.string :state
-      t.boolean :family_friendly
+      t.boolean :family_friendly, :default => false
 
       t.timestamps null: false
     end
