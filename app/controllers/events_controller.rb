@@ -9,14 +9,12 @@ class EventsController < ApplicationController
 	end
 
 	def create
-		date=params["date"]
-		if Event.exists?(:date => date)
-			"date already scheduled"
-			# redirect_to new_event_path
-		else
-			Event.create(event_params)
-			redirect_to events_path
+		date=params["event"]["date"]
+		venue_id = params["event"]["venue_id"]
+		if !Event.exists?(:date => date, :venue_id => venue_id)	
+		Event.create(event_params)
 		end
+		redirect_to events_path
 	end
 
 	def show
