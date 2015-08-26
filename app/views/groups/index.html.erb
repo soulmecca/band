@@ -14,13 +14,7 @@
 		margin-top: 100px;
 		list-style-position: inside;
 	}
-	.main{
-		width: 150px;
-		height: 150px;
-		font-size: 1000px;
 
-
-		}
 .btn-custom {
   background-color: hsl(215, 4%, 56%) !important;
   background-repeat: repeat-x;
@@ -42,7 +36,7 @@ span{
 }
 #contents{
 	color: white;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.4);
 	text-align: center;
 	padding-top: 2px;
 	padding-bottom: .5px;
@@ -50,18 +44,14 @@ span{
 .box{
 	text-align: center;
 }
-#empty{
-	height: 100px;
-}
-#inner{
 
+#inner{
 	width:95%;
-	
-	background-color: rgba(192, 192, 192, 0.8);
+	background-color: rgba(192, 192, 192, 0.5);
 	margin: 6px auto;
   padding-top: 1px;
-
 }
+
 img{
 	width: 150px;
 	height: 150px;
@@ -74,27 +64,37 @@ img{
 .text{
 	padding-top: 25px;
 }
+
+.button {
+	font-size: 30px;
+	color: white;
+}
+
 </style>
-
-
-	
 
 
 
 
 <div id ="frame">
 	<div id="contents">
-				<span>BAND</span>
-	</div>
-	<div id="contents">
-		<ul>
+		<div id= "inner">
+			<span>BAND</span>
+		</div>
+
+		<div id="inner">
+			<ul>
 			<% @groups.each do |group|%>
 				<h2>Band Name:<%= link_to group.name, group%></h2>
 			<%end%>
 		</ul>
 	</div>
-	<button type="button" class="btn btn-default" id="inner"><%=link_to 'Add group', new_group_path%></button>
-</div>
+	<button type="button" class="btn btn-default button" id="inner"><%=link_to 'Add group', new_group_path%></button>
+		</div>
+	</div>
+
+
+	
+		
 
 	
 
