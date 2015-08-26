@@ -1,0 +1,17 @@
+<h1>New Event for <%= Venue.find(params['id']).name %></h1>
+
+<%= form_for @event do |f| %>
+<!-- how the hell does this work? -->
+<%= f.label :date, "Set Date:" %>
+<%= f.date_field(:date) %>
+<br>
+<%= f.label :group_id, "Band:" %>
+<%= f.collection_select :group_id, @groups, :id, :name %>
+<br>
+<%= f.label :alcohol_served, "Alcohol Served?" %>
+<%= f.check_box :alcohol_served %>
+<br>
+<%= f.submit %>
+
+<%= f.hidden_field :venue_id, value: params['id'] %>
+<% end %>

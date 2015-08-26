@@ -9,7 +9,6 @@ class WelcomeController < ApplicationController
 	def searchresults
 		date = params['date']
 		@events = Event.where(date:date)
-		@dates = Event.find_by(date: date)
 	end
 
 
